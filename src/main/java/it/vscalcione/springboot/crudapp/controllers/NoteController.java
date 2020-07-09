@@ -2,10 +2,9 @@ package it.vscalcione.springboot.crudapp.controllers;
 
 import it.vscalcione.springboot.crudapp.entities.Note;
 import it.vscalcione.springboot.crudapp.repositories.NoteRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 public class NoteController {
@@ -27,4 +26,8 @@ public class NoteController {
         return noteRepository.save(note);
     }
 
+    @GetMapping("/notes/{id}")
+    Optional<Note> getNote(@PathVariable Long id) {
+        return noteRepository.findById(id);
+    }
 }
