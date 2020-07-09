@@ -5,8 +5,6 @@ import it.vscalcione.springboot.crudapp.entities.Note;
 import it.vscalcione.springboot.crudapp.repositories.NoteRepository;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
 public class NoteController {
 
